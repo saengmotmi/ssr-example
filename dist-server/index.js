@@ -12,4 +12,8 @@ _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_App.default
   page: "home"
 }), document.getElementById("root"));
 
-const initialData = window.__INITIAL_DATA__; // ReactDom.hydrate(<App page={initialData.page} />, document.getElementById("root"));
+const initialData = window.__INITIAL_DATA__;
+
+_reactDom.default.hydrate( /*#__PURE__*/_react.default.createElement(_App.default, {
+  page: initialData.page
+}), document.getElementById("root"));
