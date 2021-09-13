@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components";
+
 import Home from "./Home";
 import About from "./About";
 
@@ -20,7 +22,7 @@ export default function App({ page }) {
   };
 
   return (
-    <div>
+    <Container>
       <button data-page="home" onClick={onChangePage}>
         Home
       </button>
@@ -28,7 +30,7 @@ export default function App({ page }) {
         About
       </button>
       {route[pageState]}
-    </div>
+    </Container>
   );
 }
 
@@ -36,3 +38,8 @@ const route = {
   home: <Home />,
   about: <About />,
 };
+
+const Container = styled.div`
+  background-color: black;
+  color: white;
+`;

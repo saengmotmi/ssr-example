@@ -4,7 +4,7 @@ import App from "./App";
 
 const initialData = window.__INITIAL_DATA__;
 
-// ReactDom.hydrate(
-//   <App page={initialData?.page} />,
-//   document.getElementById("root")
-// );
+ReactDom.hydrate(
+  <App page={initialData?.page} />,
+  document.getElementById("root")
+);
