@@ -18,15 +18,11 @@ app.get("*", (req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const page = parsedUrl.pathname ? parsedUrl.pathname.substr(1) : "home";
 
-  const renderString = renderToString(<App page="name" />);
+  const renderString = renderToString(<App page={page} />);
   const initialData = { page };
   const result = html
     .replace('<div id="root"></div>', `<div id="root">${renderString}</div>`)
-    .replace("__DATA_FROM_SERVER__", JSON.stringify(initialData));
-  // const result = html.replace(
-  //   '<div id="root"></div>',
-  //   `<div id="root">${renderString}</div>`
-  // );
+    .replace("__DATA_FROM_SERVER__", JSON.stringify(initialData)); // head script에 데이터 주입
 
   res.send(result);
 });
